@@ -80,5 +80,5 @@ class ProjectEventsTest(AcceptanceTestCase):
         self.project.update(first_event=timezone.now())
         self.browser.get(self.path)
         self.browser.wait_until('.event-list')
-        self.browser.wait_until('.ref-empty-state')
+        self.browser.wait_until('.[data-test-id="empty-state"]')
         self.browser.snapshot('project events without events')
